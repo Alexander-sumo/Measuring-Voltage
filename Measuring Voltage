@@ -1,0 +1,17 @@
+//The goal is to read the value of the potentiometer and turn the bitvalue to voltage. Main theme is analogRead and Serial.print(ln)
+void setup() {
+  // start serial communication 
+Serial.begin(9600);
+}
+
+void loop() {
+  // Set the Bitvalue = A0
+int bitvalue = analogRead(A0);
+//
+int voltage = map(bitvalue,0,1023,0,500);
+// float of voltage/100.0 = volt
+float volt = voltage/100.0;
+//Print and display Voltage =
+Serial.print("Voltage = ");
+Serial.println(volt);
+}
